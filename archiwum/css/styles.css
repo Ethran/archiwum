@@ -112,12 +112,12 @@ a:hover{
 		color: #5a5dff;
 	}
 	100%{
-		color: #8587ff;
+		color: #6C6FF0;
 	}
 }
 @keyframes a-out {
 	0%{
-		color: #8587ff;
+		color: #6C6FF0;
 	}
 	100%{
 		color: #5a5dff;
@@ -156,10 +156,22 @@ th, td {
 tr:hover {
     background-color: coral;
     color: black;
-} 
+}
+tr:nth-child(even) {background-color:  #6b708a;}
+tr:nth-child(odd) {background-color:   Grey;} 
+tr > td:last-of-type {
+	font-style: italic;
 
+}
+td:nth-child(2){
+    background: rgba(1, 1, 10, 0.1);
+}
+td:nth-child(1){  text-align: right}
 table {
-  margin-left: 10%;
-  margin-right: auto;
+  border-radius: 5px;
+  background: rgba(1, 1, 10, 0.6);
+  padding: auto;
+  width: 75%;
+  height: auto; 
 }
 
