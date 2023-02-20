@@ -1,0 +1,113 @@
+
+<!doctype html>
+
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Archiwum egzaminów</title>
+  <meta name="description" content="archiwum egzaminów">
+  <meta name="author" content="Wiktor Wichrowski>
+
+  <meta property="og:title" content="Archiwum egzaminów">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://students.mimuw.edu.pl/~ww439108/archiwium/">
+  <meta property="og:description" content="OSI training">
+  <meta property="og:image" content="https://students.mimuw.edu.pl/~ww439108/archiwum/rainbow.png">
+
+  <link rel="icon" href="https://students.mimuw.edu.pl/~ww439108/archiwum/rainbow.png">
+  <link rel="icon" href="https://students.mimuw.edu.pl/~ww439108/archiwum/penguin.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="https://students.mimuw.edu.pl/~ww439108/archiwium/rainbow.png">
+
+  <link rel="stylesheet" href="https://students.mimuw.edu.pl/~ww439108/archiwum/css/styles.css?v=1.0">
+  <link rel="stylesheet" href="https://students.mimuw.edu.pl/~ww439108/archiwum/css/styles_collapsible.css?v=1.0">
+  <script src="js/collapse-list.js"></script>
+  <script src="js/file-chooser.js"></script>
+</head>
+
+<body>
+
+<style>
+#shadowBox {
+    background-color: rgb(250, 250, 250);
+    /* Fallback color */
+    background-color: rgba(250, 250, 250, 0.7);
+    /* Black w/opacity/see-through */
+    width: 70%;
+    margin: 0 auto;
+    border: 3px solid green;
+    padding: 10px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.rainbow {
+	  font-family: Snell Roundhand, cursive , monospace;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 20vh;
+    letter-spacing: 5px;
+}
+.rainbow_text_animated {
+    background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow_animation 6s ease-in-out infinite;
+    background-size: 400% 100%;
+}
+
+
+@keyframes rainbow_animation {
+    0%,100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
+}
+
+
+a{
+  font-size: 200%;
+	text-decoration: none;
+	animation-name: a-out;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+}
+a:hover{
+	animation-name: a-in;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+}
+@keyframes a-in {
+	0%{
+		color: #e33b6b;
+	}
+	100%{
+		color: #7affaf;
+	}
+}
+@keyframes a-out {
+	0%{
+		color: #7affaf;
+	}
+	100%{
+		color: #e33b6b;
+	}
+	
+}
+
+</style>
+
+<div id="shadowBox">
+    <div class="rainbow rainbow_text_animated">Thank You!</div>
+    <a href="https://students.mimuw.edu.pl/~ww439108/archiwum"><p style="text-align:center">Go back</p></a>
+</div>
+
+</body>
+</html>

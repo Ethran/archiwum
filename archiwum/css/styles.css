@@ -109,18 +109,18 @@ a:hover{
 }
 @keyframes a-in {
 	0%{
-		color: #5a5dff;
+		color: #7affaf;
 	}
 	100%{
-		color: #6C6FF0;
+		color: #e33b6b;
 	}
 }
 @keyframes a-out {
 	0%{
-		color: #6C6FF0;
+		color: #e33b6b;
 	}
 	100%{
-		color: #5a5dff;
+		color: #7affaf;
 	}
 	
 }
