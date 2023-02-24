@@ -1,10 +1,14 @@
 <?php
-ob_start();
 session_start();
 require 'upload.php';
+require 'login.php';
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+if (isset($_POST['login']) && isset($_POST['email'])) {
+	login_register();
+}
+
 
 function humanFileSize($size, $unit = "")
 {
@@ -62,8 +66,10 @@ function drawTable($path)
             header("Location: thank_you");
         }
     }
-    echo "<br>";
-    printForm($nazwa);
+    echo "<br>";//.$_SESSION["zalogowany"];
+   	if(isset($_SESSION["zalogowany"]) && $_SESSION["zalogowany"]){
+    	printForm($nazwa);
+    }
 }
 
 function wypiszPrzedmiot($pdfDirectory)
@@ -119,7 +125,8 @@ function wypiszPrzedmiot($pdfDirectory)
 	type="image/svg+xml">
 <link rel="apple-touch-icon"
 	href="https://students.mimuw.edu.pl/~ww439108/archiwium/rainbow.png">
-
+<link rel="stylesheet"
+	href="https://students.mimuw.edu.pl/~ww439108/css/styles.css?v=1.0">
 <link rel="stylesheet"
 	href="https://students.mimuw.edu.pl/~ww439108/archiwum/css/styles.css?v=1.0">
 <link rel="stylesheet"
@@ -171,11 +178,66 @@ wypiszPrzedmiot("Informatyka");
 wypiszPrzedmiot("Bioinformatyka");
 ?>
 </normal_text>
+
+
+
+	<div class="welcome-popup" id="WelcomeMessage">
+		Witaj na stronie archiwum egzaminów!
+		<dl>
+		  <dt>Jeśli chesz wrzucić materiały:</dt>
+		  <dd>- upewnij się że skany są dobrej jakości</dd>
+		  <dd>- strona przyjmuje tylko pliki .pdf oraz niektóre pliki archiwów: .zip oraz tar.gz</dd>
+		  <dd>- proszę nie wrzucaj dużych plików, niestety nie mam dużo miejsa na dysky :/</dd>
+		</dl>
+		Jeśli już to zrobiłeś to uzupełnij fomularz w lewym dolnym rogu.<br>
+		PS: Ta strona używa ciasteczek<br>
+		<span style="font-size: 0.1vw">Klikając "Close" sprzedajesz duszę diabłu.</span>
+		<button class="close-button" onclick="closeWelcome()">Close</button>
+		<script>
+		    var welcome = localStorage.getItem('welcome') || '';
+		    if (welcome == 'yes') {
+				document.getElementById("WelcomeMessage").style.display = "none";
+   		 	}
+		function closeWelcome() {
+		  document.getElementById("WelcomeMessage").style.display = "none";
+		  localStorage.setItem('welcome','yes');
+		} 
+		</script>
+	</div>
+	<button class="open-button" onclick="openForm()">Login</button>
+
 	
+	<div class="form-popup" id="myForm">
+	  <form action="" class="form-container" method="post" enctype="multipart/form-data">
+		<h1>Miło cię widzieć!</h1>
+
+		<label for="email"><b>Email: (z MIM-u)</b></label>
+		<input type="text" placeholder="np: xx123456@students.mimuw.edu.pl" name="email" required>
+
+		<label for="psw"><b>kod: (jeśli jesteś pierwszy raz zostaw puste)</b></label>
+		<input type="password" placeholder="kod z maila" name="psw">
+
+		<button type="submit" name="login" class="btn">Login</button>
+		<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+	  </form>
+	</div>
+
+	<script>
+	function openForm() {
+	  document.getElementById("myForm").style.display = "block";
+	}
+
+	function closeForm() {
+	  document.getElementById("myForm").style.display = "none";
+	}	
+	</script>
+
+
+
 	</div>
 
 </body>
 </html>
 <?php
-ob_end_flush();
+
 ?>
