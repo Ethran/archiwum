@@ -191,24 +191,28 @@ table {
 
 
 .welcome-popup {  
-	color: rgb(34, 12, 24);
-  background-color: #2196F3;
-  border: 3px solid #f1f1f1;
+  border-radius: 25px;
+	color: RGB(18, 15, 61);
+  background-color: rgba(33,150,243,0.99);
+  box-shadow: 0px 0px 0px 8px rgba(75,0,130,0.8);       
+  border: 5px solid rgba(75,0,130,0.9)	;/*Indigo*/
   padding: 2vw 2vw;
   font-size: 1vw;
   display: block;
   width: 50vw;
   height: 30vh;
   /* Center vertically and horizontally */
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   margin: -15vh 0 0 -25vw; /* Apply negative top and left margins to truly center the element */
+  line-height: 1.5em;
 }
 
 
 /* Button used to close welcome information */
 .close-button {
+  border-radius: 10px;
   background-color: lime;
   color: white;
   padding: 16px 20px;

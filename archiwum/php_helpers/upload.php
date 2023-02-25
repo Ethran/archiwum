@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 
 function checkString($nazwa)
 {
-    require 'blackList.php';
+    require 'php_helpers/blackList.php';
     $nazwa = strtolower($nazwa);
     if (strlen($nazwa) > 100) {
         echo '<script>alert("twój komentarz jest za długi")</script>';
@@ -57,6 +57,14 @@ function uploadFile($file, $target_file)
 
 function getFilesUpload($target_dir, $tresc, $rozw)
 {
+
+	$filteredNumbers = array_filter(preg_split("/\D+/", shell_exec("du -s")));
+	$size = reset($filteredNumbers);
+	if($size>2000000)
+	{
+		echo '<script>alert("Nie ma już miejsca na więcej plików.")</script>';
+        return false;
+	}
     if (checkString($_POST["komentarz"]) == false)
         return false;
 
@@ -91,7 +99,8 @@ function getFilesUpload($target_dir, $tresc, $rozw)
         $path_zad,
         $path_rozw,
         $_POST["rodzaj"],
-        $_POST["komentarz"]
+        $_POST["komentarz"],
+        $_SESSION["zalogowany"]
     );
     if (($handle = fopen($target_dir . "files_informations.csv", "a")) !== FALSE) {
         fputcsv($handle, $informacje);
@@ -108,8 +117,8 @@ function printForm($nazwa)
     echo <<< EOT
     <form action="" method="post" enctype="multipart/form-data">
     	<input type="date" name="data_testu"
-    		   value="2023-02-20"
-    		   min="2000-01-01" max="2030-12-31">
+    		   value="1970-01-01"
+    		   min="1970-01-01" max="2030-12-31">
     	  <select id="rodzaj" name="rodzaj">
     		<option value="Egzamin">Egzamin</option>
     		<option value="Egzamin*">Egzamin*</option>

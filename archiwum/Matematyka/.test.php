@@ -1,7 +1,13 @@
 <?php     
 session_start();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-
+echo shell_exec("du -s");
+$filteredNumbers = array_filter(preg_split("/\D+/", shell_exec("du -s")));
+$size = reset($filteredNumbers);
+echo $size; // 3
    ?>
    <form method="post" action="">
 
