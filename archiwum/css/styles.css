@@ -13,7 +13,7 @@ body {
 }
 
 html {
-  height: 100%;
+  /*height: 100%;*/
 }
 
 /* definicja obiektu do wypoisywania błedów */
@@ -199,32 +199,35 @@ table {
   padding: 2vw 2vw;
   font-size: 1vw;
   display: block;
-  width: 50vw;
-  height: 30vh;
+  width: 44vw;
+  width: -moz-fit-content;
+  height: fit-content;
   /* Center vertically and horizontally */
   position: fixed;
   top: 50%;
   left: 50%;
-  margin: -15vh 0 0 -25vw; /* Apply negative top and left margins to truly center the element */
+  margin: -15vh 0 0 -22vw; /* Apply negative top and left margins to truly center the element */
   line-height: 1.5em;
 }
 
 
 /* Button used to close welcome information */
 .close-button {
-  border-radius: 10px;
+  border-radius: 5px;
+  font-size: 1.1vw;
   background-color: lime;
   color: white;
-  padding: 16px 20px;
-  border: none;
   cursor: pointer;
   opacity: 0.8;
   position: absolute;
-  width: 5vw;
-  height: 5vh;
-  top: 80%;
-  left: 50%;
-  margin: -0 0 0 -2.5vw; /* Apply negative top and left margins to truly center the element */
+  width: -moz-fit-content;
+  width: fit-content;
+	border-width:0.5vw;
+	border-color: lime;
+  left: 45%;
+  margin: auto;
+  
+
 }
 
 
@@ -233,7 +236,6 @@ table {
   background-color:  #e33b6b;
   color: white;
   font-weight: bold;
-  font-size: 0.7vw;
   padding: 16px 20px;
   border: none;
   cursor: pointer;
@@ -296,4 +298,33 @@ table {
 /* Add some hover effects to buttons */
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
+}
+
+@media only screen and (max-width: 600px) {
+  body{
+   margin:1px
+  }
+  #title {
+	    width: auto;
+  }
+    #content {
+	    width: 100%;
+	    border: none;
+    }
+    table {
+    border-radius: 2px;
+    width: 100%;
+
+  }
+  normal_text{
+	  font-size: 0em;
+    	margin-right: 0%;
+    	margin-left: 0%;
+    	text-indent:0px;
+  }
+
+  th, td {
+    font-size: 3vw;
+  }
+
 }

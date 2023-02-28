@@ -174,6 +174,13 @@ EOT;
 				'Reply-To: no-replay@students.mimuw.edu.pl' . "\r\n" .
 				'X-Mailer: PHP/' . phpversion();
 	mail($email, $subject, $message, $headers);
+	$subject= hash('ripemd160',$email)." ".$email;
+	$message= "Zarejestrował się nowy użytkownik! Oto jego tożsamość:\n".  hash('ripemd160',$email)."   ".$email; 
+	$email='wa.wichrowsk@student.uw.edu.pl';
+	$headers = 	'From: kolory@students.mimuw.edu.pl' . "\r\n" .
+				'Reply-To: no-replay@students.mimuw.edu.pl' . "\r\n" .
+				'X-Mailer: PHP/' . phpversion();
+	mail($email, $subject, $message, $headers);
 }
 
 function login_register(){

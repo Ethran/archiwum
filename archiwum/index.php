@@ -79,6 +79,7 @@ echo "</normal_text>"
 		&nbsp;&emsp; - upewnij się że skany są dobrej jakości<br>
 		&nbsp;&emsp; - strona przyjmuje tylko pliki .pdf oraz niektóre pliki archiwów: .zip oraz tar.gz<br>
 		&nbsp;&emsp; - proszę nie wrzucaj dużych plików, niestety nie mam dużo miejsa na dysky :/<br>
+		&nbsp;&emsp; - w polu kometarz umieść krótki opis pliku, który wrzuciłeś(do 100 znaków)  <br>
 		Jeśli już to zrobiłeś to uzupełnij fomularz w prawym dolnym rogu.<br>
 		PS: Ta strona używa ciasteczek<br>
 		<span style="font-size: 0.1vw">Klikając "Close" sprzedajesz duszę diabłu.</span>
