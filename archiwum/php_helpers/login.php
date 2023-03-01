@@ -14,7 +14,7 @@ function check_if_exist($email){
 	return false;
 }
 function send($email, $kod){
-    $subject = 'Twój kod już na ciebie czeka!';
+    $subject = 'Twoj kod juz na ciebie czeka!';
     $message =<<< EOT
 <!DOCTYPE html>
 <html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
@@ -24,7 +24,7 @@ function send($email, $kod){
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet" type="text/css">
   <style>
-   * {
+   *{
     box-sizing: border-box
    }
 
@@ -49,7 +49,6 @@ function send($email, $kod){
 
 
    @media (max-width:620px) {
-
     .image_block img.big,
     .row-content {
      width: 100% !important
@@ -80,15 +79,13 @@ function send($email, $kod){
               <table class="text_block block-1" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace:0;mso-table-rspace:0;word-break:break-word">
                <tr>
                 <td class="pad">
-                 <div style="font-family:Georgia,'Times New Roman',serif">
                   <div class style="font-size:14px;font-family:'Droid Serif',Georgia,Times,'Times New Roman',serif;mso-line-height-alt:16.8px;color:#555;line-height:1.2">
                    <p style="margin:0;font-size:22px;text-align:center;mso-line-height-alt:26.4px">
                     <span style="color:#ffffff;font-size:80px;">
-                     <strong>Kolory</strong>
+                     <b>Kolory</b>
                     </span>
                    </p>
                   </div>
-                 </div>
                 </td>
                </tr>
               </table>
@@ -110,21 +107,19 @@ function send($email, $kod){
               <table class="text_block block-3" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace:0;mso-table-rspace:0;word-break:break-word">
                <tr>
                 <td class="pad" style="padding-bottom:25px;padding-left:10px;padding-right:10px;padding-top:5px">
-                 <div style="font-family:Georgia,'Times New Roman',serif">
                   <div class style="font-size:12px;color:#fff;line-height:1.5">
                    <p style="margin:0;font-size:24px;text-align:center;mso-line-height-alt:57px">
-                    <span style="font-size:38px;">Twój kod to: {$kod} <br>
+                    <span style="font-size:38px; color: white;">Twój kod to: {$kod} <br>
                     </span>
                    </p>
                   </div>
-                 </div>
                 </td>
                </tr>
               </table>
-              <table class="image_block block-4" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace:0;mso-table-rspace:0">
+              <table class="image_block block-4" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
                <tr>
                 <td class="pad" style="width:100%;padding-right:0;padding-left:0">
-                 <div class="alignment" align="center" style="background-image: url(https://students.mimuw.edu.pl/~ww439108/archiwum/img/kolory.png);
+                 <div class="alignment" align="center" style="background-image: url('https://students.mimuw.edu.pl/~ww439108/archiwum/img/kolory.png');
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: left top;
@@ -138,7 +133,7 @@ function send($email, $kod){
     left: 50%;
     transform: translate(-50%, -50%);
     color: #ffffff;
-    font-family: Bradley Hand, cursive;
+    font-family:  'Bradley Hand', cursive ;
     font-size: 28px;">
     "Kolory. Skrzyżowanie czerwonego z niebieskim. W skrzyżowaniu czerwonego z niebieskim jest trochę czerwonego. I niebieskiego, trochę. I nie ma nic więcej." 
     <div style="text-align: left;

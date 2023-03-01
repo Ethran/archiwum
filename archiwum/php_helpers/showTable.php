@@ -41,7 +41,8 @@ function drawTable($path)
             } else {
                 echo "<td> brak</td>";
             }
-            echo "<td> $data[4]</td>";
+            $coment =strip_tags($data[4]);
+            echo "<td>$coment </td>";
             echo "</tr>";
         }
         fclose($handle);

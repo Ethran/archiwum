@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>Archiwum egzaminów</title>
+        <title>Archiwum egzaminów i kolokwiów</title>
         <meta name="description" content="Archiwum egzaminów z MIM-u, tutaj znajdziesz egzaminy z analizy, topologi, algebry oraz wielu innych." />
         <meta name="author" content="Wiktor Wichrowski" />
         <meta name="keywords" content="kolory, mim, mimuw, matematyka, archiwum, egzaminy, analiza, analiza matematyczna, geometria, topologia, algebra, rachunek prawdopodobieństwa, zadania, rozwiazania, Wiktor Wichrowski" />

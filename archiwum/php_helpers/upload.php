@@ -55,6 +55,21 @@ function uploadFile($file, $target_file)
     return false;
 }
 
+function counter(){
+	$file = '/home/students/mat/w/ww439108/public_html/archiwum/file_counter.txt';
+
+	// default the counter value to 1
+	$counter = 1;
+
+	// add the previous counter value if the file exists    
+	if (file_exists($file)) {
+		$counter += intval(file_get_contents($file));
+	}
+
+	// write the new counter value to the file
+	file_put_contents($file, $counter);
+	return $counter;
+}
 function getFilesUpload($target_dir, $tresc, $rozw)
 {
 
@@ -76,7 +91,8 @@ function getFilesUpload($target_dir, $tresc, $rozw)
         echo '<script>alert("wgraj plik z zadaniami proszę...")</script>';
         return false;
     }
-    $path_zad = $target_dir . date("Y-m-d_H-i-s_") . basename($_FILES[$tresc]["name"]);
+    $file_counter=counter();
+    $path_zad = $target_dir ."zad(".$file_counter .")_". basename($_FILES[$tresc]["name"]);
     $uploadOk = uploadFile($tresc, $path_zad);
     // Check if $uploadOk is set to 0 by an error
     if ($uploadOk == false) {
@@ -91,7 +107,7 @@ function getFilesUpload($target_dir, $tresc, $rozw)
     if (! file_exists($_FILES[$rozw]['tmp_name']) || ! is_uploaded_file($_FILES[$rozw]['tmp_name'])) {
         $path_rozw = "";
     } else {
-        $path_rozw = $target_dir . date("Y-m-d_H-i-s_") . "rozw_" . basename($_FILES[$rozw]["name"]);
+        $path_rozw = $target_dir ."roz(".$file_counter .")_". basename($_FILES[$rozw]["name"]);
         $uploadOk = uploadFile($rozw, $path_rozw);
     }
     $informacje = array(
@@ -100,7 +116,8 @@ function getFilesUpload($target_dir, $tresc, $rozw)
         $path_rozw,
         $_POST["rodzaj"],
         $_POST["komentarz"],
-        $_SESSION["zalogowany"]
+        $_SESSION["zalogowany"],
+         date("Y-m-d H-i-s")
     );
     if (($handle = fopen($target_dir . "files_informations.csv", "a")) !== FALSE) {
         fputcsv($handle, $informacje);

@@ -75,13 +75,14 @@ echo "</normal_text>"
 	<div class="welcome-popup" id="WelcomeMessage">
 		<h1>Witaj na stronie archiwum egzaminów!</h1>
 		
-		<span style="font-size: 1.4vw">Jeśli chesz wrzucić materiały:</span><br>
+		<span style="font-size: 1.4vw">Jeśli chcesz wrzucić materiały:</span><br>
 		&nbsp;&emsp; - upewnij się że skany są dobrej jakości<br>
 		&nbsp;&emsp; - strona przyjmuje tylko pliki .pdf oraz niektóre pliki archiwów: .zip oraz tar.gz<br>
-		&nbsp;&emsp; - proszę nie wrzucaj dużych plików, niestety nie mam dużo miejsa na dysky :/<br>
+		&nbsp;&emsp; - proszę nie wrzucaj dużych plików, niestety nie mam dużo miejsa na dysku :/<br>
+		&nbsp;&emsp; - w formularzu ustaw datę, kiedy odbył się egzamin  <br>
 		&nbsp;&emsp; - w polu kometarz umieść krótki opis pliku, który wrzuciłeś(do 100 znaków)  <br>
 		Jeśli już to zrobiłeś to uzupełnij fomularz w prawym dolnym rogu.<br>
-		PS: Ta strona używa ciasteczek<br>
+		PS: Ta strona używa ciasteczek, administratorem danych osobowych jestem JA<br>
 		<span style="font-size: 0.1vw">Klikając "Close" sprzedajesz duszę diabłu.</span>
 		<button class="close-button" onclick="closeWelcome()">Close</button>
 		<script>
